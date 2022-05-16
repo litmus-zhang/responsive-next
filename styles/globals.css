@@ -95,7 +95,7 @@ header{
   .nav__menu-list{
     position: unset;
     width: fit-content;
-    min-height: fit-content;
+    min-height: 60px;
     flex-direction: row;
     column-gap: 1.5rem;
     align-items: center;
