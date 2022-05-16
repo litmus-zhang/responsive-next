@@ -1,10 +1,5 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
 
 a {
   color: inherit;
@@ -13,4 +8,112 @@ a {
 
 * {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
 }
+header{
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.nav{
+  display: flex;
+  padding: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: antiquewhite; */
+  background-color: #f1f1f1;
+}
+.nav__menu-bar{
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+  cursor: pointer;
+}
+.nav__menu-bar div{
+  width:36px;
+  height: 4px;
+  background-color: black;
+  border-radius: 2px;
+}
+
+.nav__menu-list{
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 60px;
+  row-gap: 1.5rem;
+  right: -288px;
+  padding: 1.5rem 1rem;
+  width: 288px;
+  min-height: calc(100vh - 60px);
+  background-color: #eee;
+  transition: all 0.3s;
+}
+.nav__menu-list.active{
+  right: 0;
+}
+
+.nav__link{
+  font-size: 18px;
+  position: relative;
+  transition: all 0.2s;
+}
+.nav__link.active{
+  font-weight: bold;
+}
+.nav__link:hover{
+  font-weight: bold;
+}
+.nav__link::before{
+  content: "";
+ position: absolute;
+ width: 0%;
+ left: 0;
+ bottom: -10px;
+  height: 6px;
+  background-color: #000;
+  transition: all 0.3s;
+}
+
+.nav__link:hover::before{
+  width: 100%;
+}
+.center{
+  min-height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (min-width: 768px){
+  .nav__menu-bar{
+    display: none;
+  }
+  .nav__menu-list{
+    position: unset;
+    width: fit-content;
+    min-height: fit-content;
+    flex-direction: row;
+    column-gap: 1.5rem;
+    align-items: center;
+  }
+  .nav__link::before{
+    content: "";
+   position: absolute;
+   width: 0%;
+   left: 0;
+   bottom: -10px;
+    height: 6px;
+    background-color: #000;
+    transition: all 0.3s;
+  }
+  
+  .nav__link:hover::before, .nav__link:active::before{
+    width: 100%;
+  }
+ 
+}
+  
